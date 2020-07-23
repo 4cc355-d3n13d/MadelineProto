@@ -36,7 +36,7 @@
         "tivie/htaccess-parser": "^0.2.3"
     },
     "require-dev": {
-        "vlucas/phpdotenv": "^3",
+        "vlucas/phpdotenv": "^3 | ^4 | ^5",
         "phpdocumentor/reflection-docblock": "^4.3",
         "ennexa/amp-update-cache": "dev-master",
         "phpunit/phpunit": "^8",

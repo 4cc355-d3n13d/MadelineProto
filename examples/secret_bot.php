@@ -132,7 +132,7 @@ class SecretHandler extends \danog\MadelineProto\EventHandler
 
 if (\file_exists('.env')) {
     echo 'Loading .env...'.PHP_EOL;
-    $dotenv = Dotenv\Dotenv::create(\getcwd());
+    $dotenv = Dotenv\Dotenv::createImmutable(\getcwd());
     $dotenv->load();
 }
 
