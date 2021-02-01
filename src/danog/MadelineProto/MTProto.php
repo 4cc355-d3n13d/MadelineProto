@@ -22,7 +22,6 @@ namespace danog\MadelineProto;
 use Amp\Dns\Resolver;
 use Amp\File\StatCache;
 use Amp\Http\Client\HttpClient;
-use Amp\Loop;
 use Amp\Promise;
 use Amp\Success;
 use Closure;
@@ -47,7 +46,6 @@ use danog\MadelineProto\Settings\TLSchema;
 use danog\MadelineProto\TL\TL;
 use danog\MadelineProto\TL\TLCallback;
 use Psr\Log\LoggerInterface;
-
 use function Amp\File\exists;
 use function Amp\File\size;
 
@@ -911,7 +909,7 @@ class MTProto extends AsyncConstruct implements TLCallback
                 $this->ipcServer->setSettings($this->settings->getIpc());
                 $this->ipcServer->setIpcPath($this->wrapper->session);
             } catch (\Throwable $e) {
-                $this->logger->logger("Error while starting IPC server: $e", Logger::FATAL_ERROR);
+                # $this->logger->logger("Error while starting IPC server: $e", Logger::FATAL_ERROR);
             }
         }
         $this->callCheckerLoop->start();

@@ -333,7 +333,7 @@ class Magic
         self::$altervista = isset($_SERVER['SERVER_ADMIN']) && \strpos($_SERVER['SERVER_ADMIN'], 'altervista.org');
         self::$zerowebhost = isset($_SERVER['SERVER_ADMIN']) && \strpos($_SERVER['SERVER_ADMIN'], '000webhost.io');
         self::$can_getmypid = !self::$altervista && !self::$zerowebhost;
-        self::$revision = is_file(__DIR__.'/../../../.git/refs/heads/master');
+        self::$revision = \is_file(__DIR__.'/../../../.git/refs/heads/master');
         self::$revision && self::$revision = @\file_get_contents(__DIR__.'/../../../.git/refs/heads/master');
         if (self::$revision) {
             self::$revision = \trim(self::$revision);

@@ -56,7 +56,7 @@ class Server extends SignalLoop
     /**
      * Callback IPC server.
      */
-    private ServerCallback $callback;
+    private $callback;
     /**
      * IPC settings.
      */
@@ -77,7 +77,7 @@ class Server extends SignalLoop
     }
     public function start(): bool
     {
-        return $this instanceof ServerCallback ? parent::start() : $this->callback->start() && parent::start();
+        return $this instanceof ServerCallback ? parent::start() : $this->callback?->start() && parent::start();
     }
     /**
      * Start IPC server in background.

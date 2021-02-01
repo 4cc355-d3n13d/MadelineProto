@@ -10,7 +10,7 @@
         "ext-pthreads": "*"
     },
     "require": {
-        "php": ">=7.4.0",
+        "php": ">=8.0",
         "danog/primemodule": "^1",
         "erusev/parsedown": "^1.7",
         "symfony/polyfill-mbstring": "*",
